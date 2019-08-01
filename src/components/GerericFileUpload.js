@@ -3,7 +3,7 @@ import { UploaderComponent } from '@syncfusion/ej2-react-inputs';
 import readXlsxFile from 'read-excel-file'
 import useGlobal from '../store';
 
-const GenericFileUpload = ({ id, type, asyncSettings }) => {
+const GenericFileUpload = ({ id, type, asyncSettings, allowedExtensions }) => {
     
     const [globalState, globalActions] = useGlobal();
 
@@ -31,6 +31,7 @@ const GenericFileUpload = ({ id, type, asyncSettings }) => {
             <div className="position-relative">
                 <UploaderComponent id={id} type={type}
                     asyncSettings={asyncSettings}
+                    allowedExtensions={allowedExtensions}
                     success={onUploadSuccess.bind(this)}
                     removing={onRemoveFile.bind(this)}>
                 </UploaderComponent>
